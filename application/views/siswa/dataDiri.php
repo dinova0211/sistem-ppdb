@@ -144,15 +144,15 @@
                           </div>
                           <div class="form-group">
                               <label for="alamat">Alamat</label>
-                              <textarea class="form-control" id="alamat" placeholder="Masukkan Alamat" name="alamat" required="">jl.Imam Bonjol</textarea>
+                              <textarea class="form-control" id="alamat" placeholder="Masukkan Alamat" name="alamat" required=""><?php echo $alamat ?></textarea>
                           </div>
                           <div class="form-group">
                               <label for="tempat_lahir">Tempat Lahir</label>
-                              <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" placeholder="Masukkan Tempat Lahir" name="tempat_lahir" value="surabaya" required="">
+                              <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" placeholder="Masukkan Tempat Lahir" name="tempat_lahir" value="<?php echo $tempat_lahir ?>" required="">
                           </div>
                           <div class="form-group">
                               <label for="tanggal_lahir">Tanggal Lahir</label>
-                              <input type="date" class="form-control cdp" id="tanggal_lahir" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir" name="tanggal_lahir" value="2020-05-12" required="">
+                              <input type="date" class="form-control cdp" id="tanggal_lahir" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir" name="tanggal_lahir" value="<?php echo $tanggal_lahir ?>" required="">
                           </div>
                       </div>
                       <div class="col-md-2">
@@ -181,7 +181,7 @@
                       </div>
                       <div class="form-group col-md-4">
                           <label for="nomor_hp">Nomor HP/WA</label>
-                          <input type="text" class="form-control" id="nomor_hp" name="nomor_hp" placeholder="Masukkan Nomor HP/WA" name="nomor_hp" value="085275364633" required="">
+                          <input type="text" class="form-control" id="nomor_hp" name="nomor_hp" placeholder="Masukkan Nomor HP/WA" name="nomor_hp" value="<?php echo $nomor_hp ?>" required="">
                       </div>
                 </div>
                 <div class="form-row">
@@ -200,7 +200,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label for="asal_smp">Asal SMP</label>
-                      <input type="text" class="form-control" id="asal_smp"name="asal_smp" placeholder="Masukkan Asal SMP" name="asal_smp" value="smp 22" required="">
+                      <input type="text" class="form-control" id="asal_smp"name="asal_smp" placeholder="Masukkan Asal SMP" name="asal_smp" value="<?php echo $asal_smp ?>" required="">
                     </div>    
                 </div>
           </div>

@@ -23,10 +23,6 @@ class siswaController extends CI_Controller {
 	public function dataDiri() 
 	{
 		$data = $this->m_Siswa->ambilData($this->session->userdata['nisn']);
-		$data = array(
-			'nama' => $data->nama,
-			'email' => $data->email
-		);
 		$this->load->view('siswa/dataDiri', $data);
 	}
 
