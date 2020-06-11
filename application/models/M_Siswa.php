@@ -27,8 +27,9 @@ class M_Siswa extends CI_Model {
 
     public function updateData($where, $data, $table)
     {
-      $this->db->where($where);
-      $this->db->update($table, $data);
+      var_dump($where);
+      var_dump($data);
+      return $this->db->update($this->_table, $data, $where);
     }
 
     public function cekLogin($nisn, $sandi) {

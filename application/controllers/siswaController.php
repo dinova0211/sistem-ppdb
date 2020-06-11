@@ -97,7 +97,7 @@ class siswaController extends CI_Controller {
 		);
 
 		$where = array(
-			'id_siswa' => $id
+			'nisn' => $this->session->userdata('nisn')
 		);
 
 		$this->m_Siswa->updateData($where,$data,'siswa');
