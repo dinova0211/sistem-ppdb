@@ -133,7 +133,7 @@
           <form action="<?=base_url('siswaController/updateDataDiriAksi');?>" method="post">
                 <h3><b>Data Siswa</b></h3>
                 <div class="form-row">
-                      <div class="col-md-10">
+                      <div class="col-md-12">
                           <div class="form-group">
                               <label for="nama">Nama Lengkap</label>
                               <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" name="nama" value="<?php echo $nama ?>" required="">
@@ -155,23 +155,9 @@
                               <input type="date" class="form-control cdp" id="tanggal_lahir" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir" name="tanggal_lahir" value="<?php echo $tanggal_lahir ?>" required="">
                           </div>
                       </div>
-                      <div class="col-md-2">
-                          <p class="h6 mt-2 alert-warning p-2">*Upload foto 3x4 Formal ukuran file maksimal 2 MB</p>
-                          <div class="card">
-                              <div class="imgWrap">
-                                <img id="image-preview" src="http://khisoft.id/ppdb/file/siswa/4/2222222222_foto.png" class="card-img-top img-fluid" width="100px">
-                              </div>
-                              <div class="card-body">
-                                  <div class="custom-file">
-                                      <input type="file" name="foto" id="image-source" onchange="previewImage();" class="custom-file-input" accept="image/*">
-                                      <label class="custom-file-label" id="namafile" for="inputFile">Foto</label>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
                 </div>
                 <div class="form-row">
-                      <div class="form-group col-md-4">
+                      <div class="form-group col-md-6">
                           <label for="jenis_kelamin">Jenis Kelamin</label>
                           <select id="jenis_kelamin" class="form-control" style="width: 100%;" name="jenis_kelamin" value="L" required="">
                               <option value="none" selected="" disabled="" hidden=""> Pilih Jenis Kelamin </option>
@@ -179,7 +165,7 @@
                               <option value="P">Perempuan</option>
                           </select>
                       </div>
-                      <div class="form-group col-md-4">
+                      <div class="form-group col-md-6">
                           <label for="nomor_hp">Nomor HP/WA</label>
                           <input type="text" class="form-control" id="nomor_hp" name="nomor_hp" placeholder="Masukkan Nomor HP/WA" name="nomor_hp" value="<?php echo $nomor_hp ?>" required="">
                       </div>
