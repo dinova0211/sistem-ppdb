@@ -149,9 +149,17 @@ class siswaController extends CI_Controller {
 	{
 		$data['jurusan'] = $this->m_jurusan->getAll();
 		$data['siswa'] = $this->m_Siswa->ambilData($this->session->userdata['nisn']);
-		$data['pendaftar'] = $this->m_pendaftaran->getByid($data['siswa']->id_siswa);
-
-		if($data['siswa']->id_siswa == $data['pendaftar']->siswa_id )
+		// $data['pendaftar'] = $this->m_pendaftaran->getByid($data['siswa']->id_siswa);
+		$data['pendaftar'] = $this->m_pendaftaran->getAll();
+		$cek=false;
+		foreach($data['pendaftar'] as $d)
+		{
+			if($d->siswa_id == $data['siswa']->id_siswa)
+			{
+				$cek=true;
+			}
+		}
+		if($cek)
 		{
 			// redirect('siswaController/dashboard');
 			$this->load->view('siswa/terdaftar',$data['siswa']);
