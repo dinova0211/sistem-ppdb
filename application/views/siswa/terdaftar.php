@@ -3,24 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Registrasi Pendaftaran | PPDB SMK KHISOFT TECHNOLOGY</title>
+  <title>Dashboard | PPDB SMK KHISOFT TECHNOLOGY</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="p<?php echo base_url() ?>assets/admin/lugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
+
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -35,17 +44,15 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="<?php echo base_url() ?>assets/admin/index3.html" class="brand-link">
-      <img src="<?php echo base_url() ?>assets/admin/dist/img/AdminLTELogo.png"
-           alt="AdminLTE Logo"
-           class="brand-image img-circle elevation-3"
+    <a href="index3.html" class="brand-link">
+      <img src="<?php echo base_url() ?>assets/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user (optional) -->
+      <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="<?php echo base_url() ?>assets/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
@@ -61,7 +68,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="<?php echo base_url('siswaController/dashboard') ?>" class="nav-link">
+            <a href="<?=base_url('siswaController/dashboard') ?>" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -78,7 +85,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="<?=base_url('siswaController/registrasiPendaftaran') ?>" class="nav-link active">
+            <a href="<?=base_url('siswaController/registrasiPendaftaran') ?>" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>
                 Registrasi Pendaftaran
@@ -86,7 +93,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?=base_url('siswaController/logoutSiswa')?>" class="nav-link">
+            <a  href="<?=base_url('siswaController/logoutSiswa') ?>" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
                 <p>
                 Logout
@@ -103,67 +110,24 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Registrasi Pendaftaran</h1>
-          </div>
-        </div>
+            <h1 class="m-0 text-dark">Dashboard</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
       </div><!-- /.container-fluid -->
-    </section>
+    </div>
+    <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">      
-      <div class="table-responsive">
-        <table id="datatable" class="table table-bordered table-striped">
-            <thead>
-            <tr>
-                <th>Gelombang</th>
-                <th>Waktu Buka</th>
-                <th>Kuota</th>
-            </tr>
-            </thead>
-              <tbody>
-              <?php foreach ($jurusan as $j): ?>
-                <tr>
-                  <td><?php echo $j->nama_jurusan ?></td>
-                  <td>01 Dec 2019 s/d 31 May 2020</td>
-                  <td>46</td>
-                </tr>
-                <?php endforeach; ?>
-              </tbody>
-        </table>
+      <div class="alert alert-success" role="alert">
+        <h4>Hi Pendaftar!</h4>
+        <p>Pendaftar <strong><?php echo $nama?></strong> sudah terdaftar.hubungi admin jika ada kesalahan pada pendaftaran anda.</p>
       </div>
-        <table class="table mt-2">
-          <tbody>
-            <form action=<?=base_url('siswaController/aksiDaftar');?> method="POST">
-              <!-- <input type="hidden" name="_token" value="D7FkWa5LP7QzcQFdHvvf0TZxgNXXrN70LimOxFOk">                <tr> -->
-                  <td><b>Registrasi Program Studi</b></td>
-                  <td>
-                    <div class="input-group mb-3">
-                      <select name="programstudi" class="form-control">
-                        <?php foreach ($jurusan as $j): ?>
-                        <option value="<?php echo $j->id_jurusan ?>"><?php echo $j->nama_jurusan ?></option>
-                        <?php endforeach; ?>
-                      </select>
-                    </div>
-                  </td>
-                  </tr>
-                <tr>
-                  <td></td>
-                  <td>
-                    <div class="input-group mb-3">
-                      <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Daftar</button>
-                    </div>
-                  </td>
-                </tr>
-              </form>     
-          </tbody>
-        </table>
-      </div><!-- /.container-fluid -->
-  </section>
+    </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -181,34 +145,37 @@
 
 <!-- jQuery -->
 <script src="<?php echo base_url() ?>assets/admin/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="<?php echo base_url() ?>assets/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
 <!-- Bootstrap 4 -->
 <script src="<?php echo base_url() ?>assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- DataTables -->
-<script src="<?php echo base_url() ?>assets/admin/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url() ?>assets/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="<?php echo base_url() ?>assets/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="<?php echo base_url() ?>assets/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<!-- ChartJS -->
+<script src="<?php echo base_url() ?>assets/admin/plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="<?php echo base_url() ?>assets/admin/plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="<?php echo base_url() ?>assets/admin/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="<?php echo base_url() ?>assets/admin/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="<?php echo base_url() ?>assets/admin/plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="<?php echo base_url() ?>assets/admin/plugins/moment/moment.min.js"></script>
+<script src="<?php echo base_url() ?>assets/admin/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="<?php echo base_url() ?>assets/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="<?php echo base_url() ?>assets/admin/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="<?php echo base_url() ?>assets/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="<?php echo base_url() ?>assets/admin/dist/js/adminlte.min.js"></script>
+<script src="<?php echo base_url() ?>assets/admin/dist/js/adminlte.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="<?php echo base_url() ?>assets/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url() ?>assets/admin/dist/js/demo.js"></script>
-<!-- page script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
 </body>
 </html>
