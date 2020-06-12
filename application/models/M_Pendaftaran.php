@@ -14,12 +14,6 @@ class M_Pendaftaran extends CI_Model
         return $result;
     }
 
-    public function getByid($id)
-    {
-        $this->db->where('siswa_id', $id);
-        return $this->db->get('pendaftaran')->row();
-    }
-
     public function insertDaftar($siswa_id)
     {
         $post = $this->input->post();
