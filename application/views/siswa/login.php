@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
+<div class="login-box" style="width: 500px">
   <div class="login-logo">
     <b>LOGIN PPDB<br>SMK KHISOFT TECHNOLOGY</b></a>
   </div>
@@ -27,7 +27,7 @@
   <?php echo $this->session->flashdata('pesan')?>
   <div class="card">
     <div class="card-body login-card-body">
-      <h4 class="card-title text-center">Silahkan Log in dengan Akun yang Sudah Terdaftar</h4>
+      <h4 class="card-title text-center">Silahkan Log in dengan Akun yang Sudah Terdaftar</h4> <br>
       <form action="<?=base_url('siswaController/loginSiswa') ?>" method="post">
         <label for="email">NISN</label>
         <div class="input-group mb-3">
