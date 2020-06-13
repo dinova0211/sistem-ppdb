@@ -120,17 +120,13 @@
         <table id="datatable" class="table table-bordered table-striped">
             <thead>
             <tr>
-                <th>Gelombang</th>
-                <th>Waktu Buka</th>
-                <th>Kuota</th>
+                <th>Jurusan</th>
             </tr>
             </thead>
               <tbody>
               <?php foreach ($jurusan as $j): ?>
                 <tr>
                   <td><?php echo $j->nama_jurusan ?></td>
-                  <td>01 Dec 2019 s/d 31 May 2020</td>
-                  <td>46</td>
                 </tr>
                 <?php endforeach; ?>
               </tbody>
