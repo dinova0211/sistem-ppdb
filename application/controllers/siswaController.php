@@ -118,6 +118,7 @@ class siswaController extends CI_Controller {
 		if($this->form_validation->run() == FALSE) {
 			$this->load->view('siswa/login');
 		}else{
+			
 			$nisn = $this->input->post('nisn');
 			$sandi = $this->input->post('sandi');
 
@@ -141,6 +142,7 @@ class siswaController extends CI_Controller {
 					</div>');
 					redirect('siswaController/login');
 				}
+			
 			}
 			
 		}

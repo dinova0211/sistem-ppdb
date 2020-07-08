@@ -5,12 +5,12 @@ Class Test extends CI_Controller
 {
     public function index()
     {
-    
+    //contoh jwt
         $key = "example_key";
         $token = array(
             "iss" => "http://example.org",
             "aud" => "http://example.com",
-            "iat" => 1356999524,
+            "iat" => 123,
             "nbf" => 1357000000
         );
      
